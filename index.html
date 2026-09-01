@@ -131,7 +131,8 @@
   /* Franja servicios rapida */
   .quickbar{background:var(--gris-claro);border-bottom:1px solid #eceff2;}
   .quickbar .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:22px 20px;}
-  .quickbar div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.92rem;color:var(--azul-oscuro);}
+  .quickbar-link{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.92rem;color:var(--azul-oscuro);cursor:pointer;transition:color .15s ease;}
+  .quickbar-link:hover{color:var(--naranja-oscuro);}
   .quickbar svg{width:22px;height:22px;fill:var(--naranja);flex-shrink:0;}
 
   /* Seccion titulos */
@@ -148,6 +149,7 @@
     background:linear-gradient(135deg, #1c9455 0%, #0e6b3c 100%);border:1px solid #1c9455;border-radius:var(--radio);padding:30px 26px;
     box-shadow:var(--sombra);transition:transform .18s ease, box-shadow .18s ease;
     display:block;width:100%;text-align:left;cursor:pointer;font-family:inherit;
+    scroll-margin-top:90px;
   }
   .service-card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(14,107,60,0.35);}
   .service-icon{
@@ -375,10 +377,10 @@
 
 <div class="quickbar">
   <div class="container">
-    <div><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg> Mantenimiento y reparación</div>
-    <div><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5z"/></svg> Fugas de gas</div>
-    <div><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg> Instalación de calentadores</div>
-    <div><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg> Reformas de gas</div>
+    <a href="#servicio-mantenimiento" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg> Mantenimiento y reparación</a>
+    <a href="#servicio-fugas" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5z"/></svg> Fugas de gas</a>
+    <a href="#servicio-instalacion" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg> Instalación de calentadores</a>
+    <a href="#servicio-reformas" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg> Reformas de gas</a>
   </div>
 </div>
 
@@ -388,17 +390,17 @@
     <h2 class="section-title">Todo lo que necesitas en gas, en un solo lugar</h2>
     <p class="section-sub">Trabajamos con calentadores de todas las marcas y ofrecemos soluciones completas para tu hogar o negocio.</p>
     <div class="services-grid">
-      <button type="button" class="service-card" data-img="assets/hero/mantenimiento-calentadores.jpg" data-titulo="Mantenimiento y reparación de calentadores" data-desc="Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre. Todo repuesto instalado cuenta con garantía." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de calentador">
+      <button type="button" id="servicio-mantenimiento" class="service-card" data-img="assets/hero/mantenimiento-calentadores.jpg" data-titulo="Mantenimiento y reparación de calentadores" data-desc="Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre. Todo repuesto instalado cuenta con garantía." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de calentador">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg></div>
         <h3>Mantenimiento y reparación de calentadores</h3>
         <p>Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre.</p>
       </button>
-      <button type="button" class="service-card" data-img="assets/hero/instalacion-calentadores.jpg" data-titulo="Instalación de calentadores" data-desc="Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas, sin importar la marca." data-mensaje="Hola Siigas Medellín, quiero programar la instalación de un calentador">
+      <button type="button" id="servicio-instalacion" class="service-card" data-img="assets/hero/instalacion-calentadores.jpg" data-titulo="Instalación de calentadores" data-desc="Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas, sin importar la marca." data-mensaje="Hola Siigas Medellín, quiero programar la instalación de un calentador">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg></div>
         <h3>Instalación de calentadores</h3>
         <p>Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas.</p>
       </button>
-      <button type="button" class="service-card" data-img="assets/hero/correccion-fugas.jpg" data-titulo="Reparación de fugas de gas" data-desc="Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar o negocio." data-mensaje="Hola Siigas Medellín, quiero programar una revisión/reparación de fuga de gas">
+      <button type="button" id="servicio-fugas" class="service-card" data-img="assets/hero/correccion-fugas.jpg" data-titulo="Reparación de fugas de gas" data-desc="Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar o negocio." data-mensaje="Hola Siigas Medellín, quiero programar una revisión/reparación de fuga de gas">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5zm0 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg></div>
         <h3>Reparación de fugas de gas</h3>
         <p>Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar.</p>
@@ -408,7 +410,7 @@
         <h3>Mantenimiento y reparación de estufas</h3>
         <p>Limpieza, ajuste de quemadores y reparación de estufas a gas de cualquier marca.</p>
       </button>
-      <button type="button" class="service-card" data-img="assets/hero/revision-fugas.jpg" data-titulo="Reformas de gas" data-desc="Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad." data-mensaje="Hola Siigas Medellín, quiero programar una reforma de red de gas">
+      <button type="button" id="servicio-reformas" class="service-card" data-img="assets/hero/revision-fugas.jpg" data-titulo="Reformas de gas" data-desc="Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad." data-mensaje="Hola Siigas Medellín, quiero programar una reforma de red de gas">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg></div>
         <h3>Reformas de gas</h3>
         <p>Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad.</p>
@@ -587,6 +589,29 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') cerrarModal();
   });
+
+  function irAServicioPorHash(hash) {
+    if (!hash) return;
+    var card = document.querySelector(hash);
+    if (!card || !card.classList.contains('service-card')) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function() { abrirModal(card); }, 350);
+  }
+
+  document.querySelectorAll('.quickbar-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var hash = link.getAttribute('href');
+      history.pushState(null, '', hash);
+      irAServicioPorHash(hash);
+    });
+  });
+
+  if (window.location.hash) {
+    window.addEventListener('load', function() {
+      irAServicioPorHash(window.location.hash);
+    });
+  }
 })();
 
 (function() {
