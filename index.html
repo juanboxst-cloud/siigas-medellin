@@ -6,6 +6,14 @@
 <title>Siigas Medellín | Mantenimiento y Reparación de Calentadores a Gas</title>
 <meta name="description" content="Técnicos profesionales en mantenimiento, reparación e instalación de calentadores a gas en Medellín, área metropolitana y oriente antioqueño. Reparación de fugas de gas, estufas y venta de calentadores. Contáctanos por WhatsApp.">
 <link rel="icon" type="image/png" href="assets/logo-icono.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZHES611LP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0ZHES611LP');
+</script>
 <style>
   :root{
     --azul: #1c9455;
@@ -693,6 +701,19 @@
   setInterval(function() {
     mostrar(siguienteOrden());
   }, 3800);
+})();
+
+(function() {
+  if (typeof gtag !== 'function') return;
+  document.addEventListener('click', function(e) {
+    var enlace = e.target.closest('a[href^="https://wa.me"], a[href^="tel:"]');
+    if (!enlace) return;
+    var esWhatsapp = enlace.href.indexOf('wa.me') !== -1;
+    gtag('event', esWhatsapp ? 'click_whatsapp' : 'click_llamar', {
+      event_category: 'contacto',
+      event_label: enlace.href
+    });
+  });
 })();
 </script>
 
