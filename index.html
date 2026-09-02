@@ -199,9 +199,10 @@
   .card-red .btn{width:100%;font-size:.88rem;padding:.75rem 1rem;}
 
   .marcas{background:var(--niebla);}
-  .marcas-chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
-  .marcas-chips span{background:#fff;border:1px solid var(--niebla-borde);padding:12px 24px;border-radius:10px;display:flex;align-items:center;justify-content:center;height:72px;min-width:110px;}
-  .marcas-chips img{height:40px;width:auto;max-width:130px;}
+  .marcas-chips{display:flex;flex-wrap:wrap;gap:32px;margin-top:28px;align-items:center;}
+  .marcas-chips span{display:flex;align-items:center;justify-content:center;height:56px;}
+  .marcas-chips img{height:38px;width:auto;max-width:120px;filter:grayscale(100%) opacity(0.55);transition:filter .2s ease;}
+  .marcas-chips span:hover img{filter:grayscale(0%) opacity(1);}
 
   /* Nosotros */
   .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
