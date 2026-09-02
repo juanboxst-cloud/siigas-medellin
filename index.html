@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZHES611LP"></script>
 <script>
@@ -166,7 +168,8 @@
   .coverage-msg .txt{flex:1;min-width:180px;font-size:.92rem;font-weight:600;color:#0e6b3c;}
   .coverage-msg .txt strong{color:var(--grafito);}
   .coverage-msg .btn{padding:.6rem 1.1rem;font-size:.86rem;}
-  .coverage-map{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--niebla-borde);aspect-ratio:4/3;}
+  .coverage-map{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--niebla-borde);aspect-ratio:4/3;background:var(--niebla);}
+  .coverage-map .leaflet-container{width:100%;height:100%;font-family:var(--font-sans);}
   .coverage-map iframe{width:100%;height:100%;border:0;display:block;}
 
   /* Titulos de seccion */
@@ -462,14 +465,7 @@
         <button type="button">Oriente Antioqueño</button>
       </div>
       <div class="coverage-msg" id="coverageMsg"></div>
-      <div class="coverage-map">
-        <iframe
-          src="https://www.google.com/maps?q=Valle+de+Aburr%C3%A1,+Antioquia,+Colombia&z=10&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa de cobertura Siigas Medellín">
-        </iframe>
-      </div>
+      <div class="coverage-map" id="coverageMap"></div>
     </div>
   </div>
 </section>
@@ -779,11 +775,65 @@
 </div>
 
 <script>
-/* ---------- Cobertura interactiva ---------- */
+/* ---------- Cobertura interactiva (con mapa Leaflet) ---------- */
 (function() {
   var cont = document.getElementById('coverageTags');
   var msg = document.getElementById('coverageMsg');
+  var mapEl = document.getElementById('coverageMap');
   if (!cont || !msg) return;
+
+  var coords = {
+    'Medellín': [6.2442, -75.5812],
+    'Envigado': [6.1719, -75.5854],
+    'Sabaneta': [6.1520, -75.6167],
+    'Itagüí': [6.1719, -75.6116],
+    'Bello': [6.3373, -75.5581],
+    'La Estrella': [6.1547, -75.6428],
+    'Copacabana': [6.3487, -75.5089],
+    'Rionegro': [6.1537, -75.3737],
+    'Marinilla': [6.1731, -75.3378],
+    'El Retiro': [6.0611, -75.5011],
+    'Oriente Antioqueño': [6.1400, -75.3600]
+  };
+
+  var map = null, circuloActivo = null, marcaActiva = null;
+
+  function initMapa() {
+    if (map || !mapEl || typeof L === 'undefined') return;
+    map = L.map(mapEl, { scrollWheelZoom: false }).setView([6.24, -75.55], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap',
+      maxZoom: 18
+    }).addTo(map);
+  }
+
+  function marcarZona(zona) {
+    initMapa();
+    if (!map) return;
+    var ll = coords[zona];
+    if (!ll) return;
+
+    if (circuloActivo) map.removeLayer(circuloActivo);
+    if (marcaActiva) map.removeLayer(marcaActiva);
+
+    circuloActivo = L.circle(ll, {
+      radius: 4000,
+      color: '#25D366',
+      weight: 2,
+      fillColor: '#25D366',
+      fillOpacity: 0.22
+    }).addTo(map);
+
+    marcaActiva = L.circleMarker(ll, {
+      radius: 6,
+      color: '#0e6b3c',
+      weight: 2,
+      fillColor: '#25D366',
+      fillOpacity: 1
+    }).addTo(map).bindPopup('Cobertura en ' + zona);
+
+    map.flyTo(ll, 12, { duration: 0.6 });
+  }
 
   cont.querySelectorAll('button').forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -795,8 +845,16 @@
         '<span class="txt">✅ Sí, tenemos cobertura en <strong>' + zona + '</strong>. Escríbenos y agenda tu visita técnica.</span>' +
         '<a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=' + encodeURIComponent(mensajeWa) + '" target="_blank" rel="noopener">Escribir por WhatsApp</a>';
       msg.classList.add('visible');
+      marcarZona(zona);
     });
   });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { initMapa(); observer.disconnect(); }
+    });
+  }, { threshold: 0.2 });
+  if (mapEl) observer.observe(mapEl);
 })();
 
 /* ---------- Menú móvil ---------- */
