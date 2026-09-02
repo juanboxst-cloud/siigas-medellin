@@ -149,8 +149,11 @@
 
   /* Cobertura */
   .coverage{padding-top:70px;}
-  .coverage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:24px;}
+  .coverage-tags{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
   .coverage-tags span{background:var(--niebla);border:1px solid var(--niebla-borde);padding:9px 18px;border-radius:30px;font-weight:600;font-size:.88rem;}
+  .coverage-map{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--niebla-borde);aspect-ratio:4/3;}
+  .coverage-map iframe{width:100%;height:100%;border:0;display:block;}
 
   /* Titulos de seccion */
   .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:34px;}
@@ -286,11 +289,13 @@
     .nosotros-grid img{height:280px;}
     .domicilio-grid{grid-template-columns:1fr 1fr;}
     .red-gas-grid{grid-template-columns:1fr 1fr;}
+    .coverage-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:640px){
     .red-gas-grid{grid-template-columns:1fr;}
+    .coverage-map{aspect-ratio:16/10;}
     .nav-links{display:none;}
     .menu-toggle{display:block;}
     .nav-phone{display:none;}
@@ -427,19 +432,29 @@
   <div class="container">
     <span class="overline">Dónde trabajamos</span>
     <h2 class="section-title">Cobertura en el Valle de Aburrá y Oriente</h2>
-    <p class="section-sub">Técnicos cercanos para responder rápido en tu zona.</p>
-    <div class="coverage-tags">
-      <span>Medellín</span>
-      <span>Envigado</span>
-      <span>Sabaneta</span>
-      <span>Itagüí</span>
-      <span>Bello</span>
-      <span>La Estrella</span>
-      <span>Copacabana</span>
-      <span>Rionegro</span>
-      <span>Marinilla</span>
-      <span>El Retiro</span>
-      <span>Oriente Antioqueño</span>
+    <p class="section-sub">Técnicos cercanos para responder rápido en tu zona. Atendemos a domicilio, sin necesidad de un local fijo.</p>
+    <div class="coverage-grid">
+      <div class="coverage-tags">
+        <span>Medellín</span>
+        <span>Envigado</span>
+        <span>Sabaneta</span>
+        <span>Itagüí</span>
+        <span>Bello</span>
+        <span>La Estrella</span>
+        <span>Copacabana</span>
+        <span>Rionegro</span>
+        <span>Marinilla</span>
+        <span>El Retiro</span>
+        <span>Oriente Antioqueño</span>
+      </div>
+      <div class="coverage-map">
+        <iframe
+          src="https://www.google.com/maps?q=Valle+de+Aburr%C3%A1,+Antioquia,+Colombia&z=10&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de cobertura Siigas Medellín">
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
