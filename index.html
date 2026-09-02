@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siigas Medellín | Mantenimiento y Reparación de Calentadores a Gas</title>
-<meta name="description" content="Técnicos profesionales en mantenimiento, reparación e instalación de calentadores a gas en Medellín, área metropolitana y oriente antioqueño. Reparación de fugas de gas, estufas y venta de calentadores. Contáctanos por WhatsApp.">
+<title>Siigas Medellín | Servicio Técnico de Calentadores y Gas</title>
+<meta name="description" content="Empresa de servicio técnico en Medellín: mantenimiento, reparación e instalación de calentadores a gas, corrección de fugas, reformas de red y venta de calentadores. Técnicos certificados, garantía en repuestos. Área metropolitana y oriente antioqueño.">
 <link rel="icon" type="image/png" href="assets/logo-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZHES611LP"></script>
 <script>
@@ -17,332 +20,299 @@
 </script>
 <style>
   :root{
-    --azul: #1c9455;
-    --azul-oscuro: #0e6b3c;
-    --naranja: #f2932e;
-    --naranja-oscuro: #d97b1a;
-    --gris-claro: #f6f7f9;
-    --texto: #1f2937;
-    --texto-suave: #5b6572;
-    --blanco: #ffffff;
-    --radio: 14px;
-    --sombra: 0 10px 30px rgba(14,107,60,0.12);
+    --grafito:#15181c;
+    --grafito-suave:#2a2f36;
+    --acero:#5b6470;
+    --acero-claro:#8a929c;
+    --niebla:#f4f6f8;
+    --niebla-borde:#e2e6ec;
+    --amarillo:#f5be00;
+    --amarillo-oscuro:#d9a800;
+    --amarillo-claro:#ffe89a;
+    --brasa:#c1361a;
+    --azul-llama:#1e6bff;
+    --whatsapp:#25d366;
+    --whatsapp-oscuro:#1fae55;
+    --blanco:#fff;
+    --font-display:"Archivo","Segoe UI",system-ui,sans-serif;
+    --font-sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+    --radius-sm:4px;
+    --radius-md:8px;
+    --radius-lg:14px;
+    --shadow-sm:0 1px 2px #0f12160d, 0 2px 6px #0f12160f;
+    --shadow-md:0 2px 4px #0f12160d, 0 8px 20px #0f121617;
+    --shadow-lg:0 4px 8px #0f12160d, 0 20px 44px #0f121621;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    color: var(--texto);
-    background: var(--blanco);
+    font-family:var(--font-sans);
+    color:var(--grafito);
+    background:var(--blanco);
     line-height:1.55;
+    -webkit-font-smoothing:antialiased;
   }
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-  .container{max-width:1140px;margin:0 auto;padding:0 20px;}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px;}
   section{padding:70px 0;}
+  h1,h2,h3,h4{font-family:var(--font-display);color:var(--grafito);}
+  .overline{
+    font-family:var(--font-mono);letter-spacing:.16em;text-transform:uppercase;
+    color:var(--acero);display:inline-flex;align-items:center;gap:8px;
+    font-size:.72rem;font-weight:600;
+  }
+
+  /* Botones */
+  .btn{
+    font-family:var(--font-display);letter-spacing:-.01em;border-radius:var(--radius-md);
+    cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:10px;
+    padding:.85rem 1.4rem;font-weight:700;line-height:1;font-size:.95rem;border:none;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-lg{padding:1.05rem 1.75rem;font-size:1.03rem;border-radius:10px;}
+  .btn-marca{background:var(--amarillo);color:var(--grafito);box-shadow:var(--shadow-sm);}
+  .btn-fantasma{color:var(--grafito);border:2px solid var(--niebla-borde);background:transparent;}
+  .btn-fantasma:hover{border-color:var(--grafito);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:var(--shadow-sm);}
+  .btn-whatsapp:hover{background:var(--whatsapp-oscuro);}
+  .btn-oscuro{background:var(--grafito);color:#fff;}
+  .btn-oscuro:hover{background:var(--grafito-suave);}
+
+  .linea-ignicion{
+    height:3px;background:linear-gradient(90deg,var(--amarillo) 0%,var(--amarillo) 55%,var(--azul-llama) 100%);
+  }
+
+  /* Ticker superior */
+  .ticker{background:var(--grafito);color:#cbd2d9;font-size:.78rem;font-weight:600;}
+  .ticker .container{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;padding:9px 20px;}
+  .ticker span{display:inline-flex;align-items:center;gap:7px;}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--niebla-borde);transition:box-shadow .2s ease;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .brand img{height:42px;width:auto;}
+  .brand-text{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;}
+  .nav-links{display:flex;gap:26px;font-weight:600;font-size:.92rem;}
+  .nav-links a:hover{color:var(--brasa);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .nav-phone{font-family:var(--font-mono);font-weight:600;font-size:.88rem;color:var(--acero);white-space:nowrap;}
+  .nav-cta{background:var(--whatsapp);color:#fff;padding:10px 18px;border-radius:30px;font-weight:700;font-size:.88rem;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+  .nav-cta:hover{background:var(--whatsapp-oscuro);}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--grafito);cursor:pointer;padding:4px 6px;line-height:1;}
+  .mobile-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--niebla-borde);}
+  .mobile-menu.abierto{display:flex;}
+  .mobile-menu a{padding:14px 20px;font-weight:600;border-bottom:1px solid var(--niebla);font-size:.95rem;}
+
+  /* Carrusel banner */
+  .banner-wrap{max-width:1180px;margin:24px auto 0;padding:0 20px;}
+  .banner{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--grafito);aspect-ratio:16/8;}
+  .banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;}
+  .banner-img.activa{opacity:1;}
+  .banner-caption{
+    position:absolute;left:0;right:0;bottom:0;padding:28px 24px 18px;
+    background:linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 100%);
+    color:#fff;font-family:var(--font-display);font-weight:700;font-size:1.05rem;
+  }
+  .banner-dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:7px;z-index:2;}
+  .banner-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);transition:all .2s ease;}
+  .banner-dots span.activo{width:22px;border-radius:5px;background:var(--amarillo);}
+
+  /* Hero (texto + tarjeta) */
+  .hero{padding:44px 0 0;}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start;}
+  .hero h1{font-size:2.7rem;font-weight:900;line-height:1.14;letter-spacing:-.01em;margin:16px 0 18px;}
+  .hero h1 mark{background:var(--amarillo);color:var(--grafito);padding:0 8px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  .hero p.desc{font-size:1.08rem;color:var(--acero);max-width:540px;line-height:1.6;margin-bottom:26px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+  .card-agenda{background:#fff;border:1px solid var(--niebla-borde);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
+  .card-agenda .inner{padding:26px;}
+  .card-agenda h2{font-size:1.2rem;font-weight:800;margin:8px 0 8px;}
+  .card-agenda p{font-size:.92rem;color:var(--acero);line-height:1.55;margin-bottom:18px;}
+  .card-agenda .acciones{display:flex;flex-direction:column;gap:10px;}
+  .card-agenda dl{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;padding-top:18px;border-top:1px solid var(--niebla-borde);}
+  .card-agenda dt{font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:var(--acero);}
+  .card-agenda dd{margin-top:4px;font-size:.88rem;font-weight:700;line-height:1.4;}
+
+  /* Barra de estadisticas (superpuesta) */
+  .stats-wrap{max-width:1180px;margin:-30px auto 0;padding:0 20px;position:relative;z-index:5;}
+  .stats{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--niebla-borde);}
+  .stats-grid > div{background:#fff;padding:22px 20px;}
+  .stats-grid dt{font-family:var(--font-display);font-weight:900;font-size:1.5rem;line-height:1;}
+  .stats-grid dd{margin-top:8px;font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--acero);}
+
+  /* Cobertura */
+  .coverage{padding-top:70px;}
+  .coverage-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .coverage-tags span{background:var(--niebla);border:1px solid var(--niebla-borde);padding:9px 18px;border-radius:30px;font-weight:600;font-size:.88rem;}
+
+  /* Titulos de seccion */
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:34px;}
+  .section-title{font-size:1.9rem;font-weight:900;margin-top:10px;letter-spacing:-.01em;}
+  .section-sub{color:var(--acero);max-width:560px;font-size:1rem;margin-top:8px;}
+  .scroll-nav{display:flex;gap:8px;}
+  .scroll-nav button{width:38px;height:38px;border-radius:50%;border:1px solid var(--niebla-borde);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--grafito);flex-shrink:0;}
+  .scroll-nav button:hover{border-color:var(--grafito);background:var(--niebla);}
+
+  /* Cards de servicios (scroll horizontal) */
+  .servicios-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;scrollbar-width:none;}
+  .servicios-track::-webkit-scrollbar{display:none;}
+  .card-servicio{
+    scroll-snap-align:start;flex:0 0 78%;background:#fff;border:1px solid var(--niebla-borde);
+    border-radius:var(--radius-lg);padding:0;cursor:pointer;text-align:left;font-family:inherit;
+    overflow:hidden;transition:transform .18s ease, box-shadow .18s ease;scroll-margin-left:4px;
+  }
+  .card-servicio:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .card-servicio .linea-ignicion{opacity:0;transition:opacity .18s ease;}
+  .card-servicio:hover .linea-ignicion{opacity:1;}
+  .card-servicio .cs-body{padding:24px;}
+  .servicio-icono{width:48px;height:48px;border-radius:10px;background:var(--niebla);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .servicio-icono svg{width:24px;height:24px;fill:var(--brasa);}
+  .card-servicio h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;}
+  .card-servicio p{font-size:.88rem;color:var(--acero);line-height:1.5;margin-bottom:12px;}
+  .card-servicio .ver-mas{font-size:.82rem;font-weight:700;color:var(--brasa);display:inline-flex;align-items:center;gap:5px;}
+
+  /* Servicio a domicilio (3 fotos) */
+  .domicilio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;}
+  .foto-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-sm);}
+  .foto-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .foto-card:hover img{transform:scale(1.06);}
+  .foto-card span{
+    position:absolute;left:0;right:0;bottom:0;padding:18px;color:#fff;font-weight:800;font-family:var(--font-display);
+    background:linear-gradient(0deg, rgba(0,0,0,.7), rgba(0,0,0,0));
+  }
+
+  /* Marcas */
+  .marcas{background:var(--niebla);}
+  .marcas-chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .marcas-chips span{background:#fff;border:1px solid var(--niebla-borde);padding:12px 22px;border-radius:10px;font-weight:800;font-family:var(--font-display);font-size:.98rem;color:var(--grafito);}
+
+  /* Nosotros */
+  .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .nosotros-grid img{border-radius:var(--radius-lg);box-shadow:var(--shadow-md);width:100%;height:420px;object-fit:cover;}
+  .nosotros-grid .texto p{color:var(--acero);font-size:1.02rem;line-height:1.65;margin:16px 0 26px;}
+  .checklist{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .checklist div{display:flex;align-items:flex-start;gap:10px;font-size:.94rem;font-weight:600;}
+  .checklist svg{width:20px;height:20px;fill:var(--whatsapp);flex-shrink:0;margin-top:1px;}
+
+  /* Firma de marca */
+  .firma{background:var(--grafito);color:#fff;text-align:center;}
+  .firma svg{width:56px;height:80px;margin:0 auto 18px;}
+  .firma h3{font-family:var(--font-display);font-weight:800;font-size:1.3rem;margin-bottom:10px;color:#fff;}
+  .firma p{color:#a9b1ba;font-size:1rem;max-width:480px;margin:0 auto;}
+
+  /* Contacto */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .info-card{background:var(--niebla);border-radius:var(--radius-lg);padding:32px;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--niebla-borde);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row svg{width:22px;height:22px;fill:var(--brasa);flex-shrink:0;margin-top:2px;}
+  .info-row h4{font-size:.94rem;margin-bottom:3px;font-weight:800;}
+  .info-row p{color:var(--acero);font-size:.9rem;}
+  .cta-card{background:var(--grafito);border-radius:var(--radius-lg);padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:center;}
+  .cta-card h3{font-size:1.35rem;font-weight:800;margin-bottom:12px;color:#fff;}
+  .cta-card p{color:#a9b1ba;margin-bottom:22px;font-size:.95rem;}
+
+  /* Footer */
+  footer{background:#0a0a0a;color:#9aa3ab;padding:56px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;padding-bottom:34px;border-bottom:1px solid #24262a;}
+  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-brand img{height:34px;}
+  .footer-brand span{font-weight:800;color:#fff;font-family:var(--font-display);}
+  .footer-col h5{color:#fff;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;}
+  .footer-col a, .footer-col p{display:block;font-size:.88rem;color:#9aa3ab;margin-bottom:10px;}
+  .footer-col a:hover{color:var(--amarillo);}
+  .foot-bottom{padding-top:20px;text-align:center;font-size:.8rem;color:#6b7278;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;}
+  .foot-bottom a{color:#9aa3ab;}
+  .foot-bottom a:hover{color:var(--amarillo);}
 
   /* WhatsApp flotante */
-  .wa-float{
-    position:fixed;bottom:22px;right:22px;z-index:999;
-    background:#25D366;width:60px;height:60px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
-    animation:pulse 2.2s infinite;
+  .wa-float-wrap{position:fixed;bottom:22px;right:22px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+  .wa-bubble{
+    background:#fff;max-width:230px;box-shadow:var(--shadow-lg);border:1px solid var(--niebla-borde);
+    border-radius:14px 14px 3px 14px;padding:12px 15px;font-size:.85rem;font-weight:600;cursor:pointer;
+    opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .25s ease, transform .25s ease;
   }
-  .wa-float svg{width:32px;height:32px;fill:#fff;}
+  .wa-bubble.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .wa-float{background:var(--whatsapp);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);animation:pulse 2.4s infinite;}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
   @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.55);}
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}
     70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}
     100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
   }
 
-  /* Header */
-  header{
-    position:sticky;top:0;z-index:100;
-    background:rgba(255,255,255,0.97);
-    border-bottom:1px solid #eceff2;
-    backdrop-filter:blur(6px);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1140px;margin:0 auto;}
-  .brand{display:flex;align-items:center;gap:10px;}
-  .brand img{height:44px;width:auto;}
-  .brand-text{font-weight:700;font-size:1.05rem;color:var(--azul-oscuro);letter-spacing:0.5px;}
-  .brand-text span{color:var(--naranja);}
-  .nav-right{display:flex;align-items:center;gap:14px;}
-  .nav-links{display:flex;gap:26px;font-weight:600;font-size:0.95rem;color:var(--azul-oscuro);}
-  .nav-links a:hover{color:var(--naranja);}
-  .nav-cta{
-    background:#25D366;color:#fff;padding:10px 18px;border-radius:30px;
-    font-weight:700;font-size:0.9rem;display:flex;align-items:center;gap:8px;white-space:nowrap;
-  }
-  .nav-cta:hover{background:#1fb958;}
-  .menu-toggle{
-    display:none;background:none;border:none;font-size:1.6rem;color:var(--azul-oscuro);
-    cursor:pointer;padding:4px 6px;line-height:1;
-  }
-  .mobile-menu{
-    display:none;flex-direction:column;background:#fff;border-top:1px solid #eceff2;
-    box-shadow:0 12px 20px rgba(14,107,60,0.08);
-  }
-  .mobile-menu.abierto{display:flex;}
-  .mobile-menu a{
-    padding:14px 20px;font-weight:600;color:var(--azul-oscuro);border-bottom:1px solid #f0f2f4;font-size:0.95rem;
-  }
-  .mobile-menu a:last-child{border-bottom:none;}
-
-  /* Hero */
-  .hero{
-    background:linear-gradient(135deg, #0e6b3c 0%, #1c9455 55%, #3fb877 100%);
-    color:#fff;padding:80px 0 90px;position:relative;overflow:hidden;
-  }
-  .hero::after{
-    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
-    background:radial-gradient(circle, rgba(242,147,46,0.35) 0%, rgba(242,147,46,0) 70%);
-  }
-  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;position:relative;z-index:2;}
-  .hero-badge{
-    display:inline-flex;align-items:center;gap:8px;background:rgba(242,147,46,0.16);
-    color:#fff;border:1px solid rgba(242,147,46,0.4);
-    padding:6px 14px;border-radius:30px;font-size:0.82rem;font-weight:700;margin-bottom:18px;
-  }
-  .hero h1{font-size:2.6rem;font-weight:800;line-height:1.18;margin-bottom:16px;}
-  .hero h1 em{color:var(--naranja);font-style:normal;}
-  .hero p{font-size:1.08rem;color:#d9f0e2;margin-bottom:28px;max-width:520px;}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:10px;
-    font-weight:700;font-size:0.98rem;transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:#25D366;color:#fff;box-shadow:0 8px 20px rgba(37,211,102,0.35);}
-  .btn-primary:hover{box-shadow:0 12px 26px rgba(37,211,102,0.45);}
-  .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);}
-  .btn-outline:hover{border-color:#fff;}
-  .hero-trust{display:flex;gap:26px;flex-wrap:wrap;color:#c9ecd6;font-size:0.88rem;}
-  .hero-trust div{display:flex;align-items:center;gap:8px;}
-  .hero-visual{
-    background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.35);
-  }
-  .hero-visual img{width:100%;height:340px;object-fit:cover;}
-  .hero-carrusel{position:relative;width:100%;height:340px;overflow:hidden;background:#0a5230;}
-  .hero-carrusel-img{
-    position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;
-    opacity:0;transition:opacity 0.9s ease;
-  }
-  .hero-carrusel-img.activa{opacity:1;}
-  .hero-carrusel-caption{
-    position:absolute;left:0;right:0;bottom:0;
-    background:linear-gradient(0deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 100%);
-    color:#fff;padding:34px 18px 14px;font-weight:700;font-size:1rem;
-    text-transform:capitalize;letter-spacing:0.2px;
-  }
-
-  /* Franja servicios rapida */
-  .quickbar{background:var(--gris-claro);border-bottom:1px solid #eceff2;}
-  .quickbar .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:22px 20px;}
-  .quickbar-link{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.92rem;color:var(--azul-oscuro);cursor:pointer;transition:color .15s ease;}
-  .quickbar-link:hover{color:var(--naranja-oscuro);}
-  .quickbar svg{width:22px;height:22px;fill:var(--naranja);flex-shrink:0;}
-
-  /* Seccion titulos */
-  .section-tag{
-    color:var(--naranja-oscuro);font-weight:700;font-size:0.82rem;letter-spacing:1px;
-    text-transform:uppercase;margin-bottom:10px;display:block;
-  }
-  .section-title{font-size:2rem;font-weight:800;color:var(--azul-oscuro);margin-bottom:14px;}
-  .section-sub{color:var(--texto-suave);max-width:620px;margin-bottom:44px;font-size:1.02rem;}
-
-  /* Servicios */
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .service-card{
-    background:linear-gradient(135deg, #1c9455 0%, #0e6b3c 100%);border:1px solid #1c9455;border-radius:var(--radio);padding:30px 26px;
-    box-shadow:var(--sombra);transition:transform .18s ease, box-shadow .18s ease;
-    display:block;width:100%;text-align:left;cursor:pointer;font-family:inherit;
-    scroll-margin-top:90px;
-  }
-  .service-card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(14,107,60,0.35);}
-  .service-icon{
-    width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.16);
-    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
-  }
-  .service-icon svg{width:28px;height:28px;fill:#fff;}
-  .service-card h3{font-size:1.12rem;color:#fff;margin-bottom:10px;font-weight:700;}
-  .service-card p{color:#d6ecdf;font-size:0.94rem;}
-
-  /* Por que elegirnos + fotos */
-  .why{background:var(--gris-claro);}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
-  .why-list{display:flex;flex-direction:column;gap:20px;}
-  .why-item{display:flex;gap:16px;align-items:flex-start;}
-  .why-item .num{
-    flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--azul);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.95rem;
-  }
-  .why-item h4{font-size:1.02rem;color:var(--azul-oscuro);margin-bottom:4px;font-weight:700;}
-  .why-item p{color:var(--texto-suave);font-size:0.92rem;}
-  .why-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .why-photos img{border-radius:12px;box-shadow:var(--sombra);height:170px;object-fit:cover;width:100%;}
-  .why-photos img:first-child{grid-column:1 / span 2;height:220px;}
-
-  /* Cobertura */
-  .coverage{
-    background:linear-gradient(135deg, var(--azul-oscuro), var(--azul));
-    color:#fff;text-align:center;
-  }
-  .coverage .section-title{color:#fff;}
-  .coverage .section-sub{color:#cdeddb;margin-left:auto;margin-right:auto;}
-  .coverage-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:10px;}
-  .coverage-tags span{
-    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);
-    padding:10px 20px;border-radius:30px;font-weight:600;font-size:0.92rem;
-  }
-
-  /* Horario y contacto */
-  .contact{background:#fff;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  .info-card{
-    background:var(--gris-claro);border-radius:var(--radio);padding:34px;
-  }
-  .info-row{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #e4e8ec;}
-  .info-row:last-child{border-bottom:none;}
-  .info-row svg{width:24px;height:24px;fill:var(--naranja-oscuro);flex-shrink:0;margin-top:2px;}
-  .info-row h4{font-size:0.98rem;color:var(--azul-oscuro);margin-bottom:3px;font-weight:700;}
-  .info-row p{color:var(--texto-suave);font-size:0.92rem;}
-  .cta-card{
-    background:linear-gradient(135deg,#6fc3f0,#2f8fd0);position:relative;overflow:hidden;
-    border-radius:var(--radio);padding:34px;color:#fff;display:flex;flex-direction:column;
-    justify-content:center;
-  }
-  .cta-avatar{
-    width:100%;height:190px;margin-bottom:20px;position:relative;
-    border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,0.2);
-  }
-  .cta-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
-  .cta-avatar .estado{
-    position:absolute;bottom:10px;right:10px;width:16px;height:16px;border-radius:50%;
-    background:#25D366;border:3px solid #fff;animation:pulse 2.2s infinite;
-  }
-  .cta-avatar .estado-label{
-    position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;
-    font-size:0.72rem;font-weight:700;padding:4px 10px;border-radius:20px;
-    display:flex;align-items:center;gap:6px;
-  }
-  .cta-avatar .estado-label .punto{width:7px;height:7px;border-radius:50%;background:#25D366;}
-  .cta-card h3{font-size:1.5rem;font-weight:800;margin-bottom:12px;}
-  .cta-card p{margin-bottom:24px;color:#eaf6ff;}
-  .cta-card .btn-primary{background:#25D366;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,0.2);justify-content:center;}
-  .cta-card .btn-primary:hover{background:#1fb958;}
-
-  /* Footer */
-  footer{background:#0a0a0a;color:#cdeddb;padding:40px 0 24px;}
-  .footer-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-brand{display:flex;align-items:center;gap:10px;}
-  .footer-brand img{height:38px;}
-  .footer-brand span{font-weight:700;color:#fff;}
-  footer .foot-links{display:flex;gap:20px;font-size:0.9rem;}
-  .foot-bottom{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.82rem;color:#7fb89a;}
-  .foot-bottom a{color:#cdeddb;}
-  .foot-bottom a:hover{color:var(--naranja);}
-
   /* Modal de servicio */
-  .modal-overlay{
-    display:none;position:fixed;inset:0;z-index:1000;
-    background:rgba(11,28,38,0.6);align-items:center;justify-content:center;padding:20px;
-  }
+  .modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(21,24,28,.65);align-items:center;justify-content:center;padding:20px;}
   .modal-overlay.abierto{display:flex;}
-  .modal-servicio{
-    background:#fff;border-radius:var(--radio);max-width:480px;width:100%;
-    overflow:hidden;position:relative;box-shadow:0 30px 60px rgba(0,0,0,0.35);
-    max-height:90vh;display:flex;flex-direction:column;
-  }
-  .modal-servicio img{width:100%;max-height:320px;object-fit:contain;background:#0d2016;flex-shrink:0;}
+  .modal-servicio{background:#fff;border-radius:var(--radius-lg);max-width:480px;width:100%;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);max-height:90vh;display:flex;flex-direction:column;}
+  .modal-servicio img{width:100%;max-height:300px;object-fit:contain;background:var(--grafito);flex-shrink:0;}
   .modal-servicio-body{padding:26px;overflow-y:auto;}
-  .modal-servicio-body h3{font-size:1.25rem;color:var(--azul-oscuro);font-weight:800;margin-bottom:10px;}
-  .modal-servicio-body p{color:var(--texto-suave);font-size:0.96rem;margin-bottom:22px;}
-  .modal-servicio-body .btn{width:100%;justify-content:center;}
-  .modal-cerrar{
-    position:absolute;top:12px;right:12px;z-index:2;
-    background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;
-    width:34px;height:34px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  }
-  .modal-cerrar:hover{background:rgba(0,0,0,0.7);}
-  @media (max-width: 640px){
-    .modal-servicio img{max-height:220px;}
-    .modal-servicio-body{padding:20px;}
-  }
+  .modal-servicio-body h3{font-size:1.25rem;font-weight:800;margin-bottom:10px;}
+  .modal-servicio-body p{color:var(--acero);font-size:.96rem;margin-bottom:22px;}
+  .modal-servicio-body .btn{width:100%;}
+  .modal-cerrar{position:absolute;top:12px;right:12px;z-index:2;background:rgba(0,0,0,.5);color:#fff;border:none;border-radius:50%;width:34px;height:34px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 
-  @media (max-width: 900px){
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-visual{order:-1;}
-    .why-grid{grid-template-columns:1fr;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .nosotros-grid{grid-template-columns:1fr;}
+    .nosotros-grid img{height:280px;}
+    .domicilio-grid{grid-template-columns:1fr 1fr;}
     .contact-grid{grid-template-columns:1fr;}
-    .services-grid{grid-template-columns:1fr 1fr;}
-    .quickbar .container{justify-content:center;text-align:center;gap:14px 24px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
   }
-  @media (max-width: 640px){
+  @media (max-width:640px){
     .nav-links{display:none;}
     .menu-toggle{display:block;}
-    .nav-cta span{display:none;}
-    .nav-cta{padding:10px 12px;}
-    .hero{padding:50px 0 60px;}
-    .hero h1{font-size:1.7rem;}
-    .hero p{font-size:0.98rem;}
-    .hero-badge{font-size:0.76rem;padding:5px 12px;}
-    .hero-actions{flex-direction:column;align-items:stretch;}
-    .hero-actions .btn{justify-content:center;}
-    .hero-actions .btn-primary{
-      width:100%;padding:18px 20px;font-size:1.12rem;border:2px solid #fff;
-      animation:pulseBlanco 2.2s infinite;
-    }
-    .hero-actions .btn-outline{
-      align-self:center;width:auto;padding:12px 18px;font-size:0.92rem;
-    }
-    @keyframes pulseBlanco{
-      0%{box-shadow:0 0 0 0 rgba(255,255,255,0.55);}
-      70%{box-shadow:0 0 0 14px rgba(255,255,255,0);}
-      100%{box-shadow:0 0 0 0 rgba(255,255,255,0);}
-    }
-    .hero-trust{gap:14px 20px;font-size:0.82rem;}
-    .hero-visual img,.hero-carrusel{height:220px;}
-    .hero-carrusel-caption{font-size:0.85rem;padding:26px 14px 12px;}
-    .services-grid{grid-template-columns:1fr;}
+    .nav-phone{display:none;}
+    .ticker span:nth-child(n+3){display:none;}
+    .hero h1{font-size:1.9rem;}
+    .hero p.desc{font-size:.98rem;}
+    section{padding:46px 0;}
+    .banner{aspect-ratio:4/3.2;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid dt{font-size:1.2rem;}
+    .card-servicio{flex:0 0 84%;}
+    .domicilio-grid{grid-template-columns:1fr;}
     .section-title{font-size:1.5rem;}
-    .why-photos img:first-child{height:180px;}
-    .why-photos img{height:130px;}
-    .coverage-tags span{padding:8px 14px;font-size:0.85rem;}
-    .info-card,.cta-card{padding:24px;}
-    .footer-grid{flex-direction:column;text-align:center;}
-    footer .foot-links{justify-content:center;flex-wrap:wrap;}
-    section{padding:44px 0;}
-  }
-  @media (max-width: 380px){
-    .brand-text{font-size:0.92rem;}
-    .hero h1{font-size:1.5rem;}
-    .hero-actions{flex-direction:column;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:26px;}
+    .modal-servicio img{max-height:220px;}
   }
 </style>
 </head>
 <body>
 
-<a class="wa-float" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20informaci%C3%B3n%20sobre%20mantenimiento%20de%20calentador" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
-</a>
+<div class="ticker">
+  <div class="container">
+    <span>🔥 Técnicos certificados en gas</span>
+    <span>🛠️ Servicio a domicilio</span>
+    <span>🛡️ Garantía en repuestos</span>
+  </div>
+</div>
 
 <header>
   <nav class="nav">
     <div class="brand">
       <img src="assets/logo-icono.png" alt="Logo Siigas Medellín">
-      <div class="brand-text">SIIGAS<span> MEDELLÍN</span></div>
+      <div class="brand-text">SIIGAS MEDELLÍN</div>
     </div>
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Por qué elegirnos</a>
+      <a href="#domicilio">Servicio a domicilio</a>
       <a href="#cobertura">Cobertura</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </div>
     <div class="nav-right">
+      <span class="nav-phone">305 322 0463</span>
       <a class="nav-cta" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20necesito%20un%20servicio" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
         <span>WhatsApp</span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -350,141 +320,92 @@
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Por qué elegirnos</a>
+    <a href="#domicilio">Servicio a domicilio</a>
     <a href="#cobertura">Cobertura</a>
+    <a href="#nosotros">Nosotros</a>
     <a href="#contacto">Contacto</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="hero-badge">🔥 Técnicos certificados en Medellín</span>
-      <h1>Mantenimiento y reparación de <em>calentadores a gas</em> cuando lo necesitas</h1>
-      <p>Instalación, reparación de fugas, mantenimiento de estufas y venta de calentadores. Atendemos toda el área metropolitana y el oriente antioqueño con técnicos profesionales.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20solicitar%20un%20servicio" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
-          Solicitar servicio
-        </a>
-        <a class="btn btn-outline" href="tel:+573053220463">📞 3053220463</a>
-      </div>
-      <div class="hero-trust">
-        <div>✅ Servicio a domicilio</div>
-        <div>🛠️ Técnicos profesionales</div>
-        <div>📍 Área metropolitana y oriente</div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div id="heroCarrusel" class="hero-carrusel">
-        <img class="hero-carrusel-img" alt="">
-        <div class="hero-carrusel-caption"><span id="heroCarruselNombre"></span></div>
-      </div>
+<div class="hero">
+  <div class="banner-wrap">
+    <div class="banner" id="heroBanner">
+      <img class="banner-img" alt="">
+      <img class="banner-img" alt="">
+      <div class="banner-caption" id="bannerCaption"></div>
+      <div class="banner-dots" id="bannerDots"></div>
     </div>
   </div>
-</section>
 
-<div class="quickbar">
-  <div class="container">
-    <a href="#servicio-mantenimiento" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg> Mantenimiento y reparación</a>
-    <a href="#servicio-fugas" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5z"/></svg> Fugas de gas</a>
-    <a href="#servicio-instalacion" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg> Instalación de calentadores</a>
-    <a href="#servicio-reformas" class="quickbar-link"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg> Reformas de gas</a>
-  </div>
-</div>
+  <div class="container" style="margin-top:40px;">
+    <div class="hero-grid">
+      <div>
+        <span class="overline">🔥 Medellín · Área Metropolitana y Oriente</span>
+        <h1>Expertos en <mark>calentadores y gas</mark> a domicilio.</h1>
+        <p class="desc">Mantenimiento, reparación e instalación de calentadores, corrección de fugas de gas, mantenimiento de estufas y reformas de red domiciliaria. Técnicos certificados y garantía en cada repuesto instalado.</p>
+        <div class="hero-actions">
+          <a class="btn btn-marca btn-lg" href="#servicios">Ver servicios</a>
+          <a class="btn btn-fantasma btn-lg" href="#cobertura">Ver cobertura</a>
+        </div>
+      </div>
 
-<section id="servicios">
-  <div class="container">
-    <span class="section-tag">Nuestros servicios</span>
-    <h2 class="section-title">Todo lo que necesitas en gas, en un solo lugar</h2>
-    <p class="section-sub">Trabajamos con calentadores de todas las marcas y ofrecemos soluciones completas para tu hogar o negocio.</p>
-    <div class="services-grid">
-      <button type="button" id="servicio-mantenimiento" class="service-card" data-img="assets/hero/mantenimiento-calentadores.jpg" data-titulo="Mantenimiento y reparación de calentadores" data-desc="Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre. Todo repuesto instalado cuenta con garantía." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de calentador">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg></div>
-        <h3>Mantenimiento y reparación de calentadores</h3>
-        <p>Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre.</p>
-      </button>
-      <button type="button" id="servicio-instalacion" class="service-card" data-img="assets/hero/instalacion-calentadores.jpg" data-titulo="Instalación de calentadores" data-desc="Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas, sin importar la marca." data-mensaje="Hola Siigas Medellín, quiero programar la instalación de un calentador">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg></div>
-        <h3>Instalación de calentadores</h3>
-        <p>Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas.</p>
-      </button>
-      <button type="button" id="servicio-fugas" class="service-card" data-img="assets/hero/correccion-fugas.jpg" data-titulo="Reparación de fugas de gas" data-desc="Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar o negocio." data-mensaje="Hola Siigas Medellín, quiero programar una revisión/reparación de fuga de gas">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5zm0 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg></div>
-        <h3>Reparación de fugas de gas</h3>
-        <p>Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar.</p>
-      </button>
-      <button type="button" class="service-card" data-img="assets/hero/mantenimiento-estufas.jpg" data-titulo="Mantenimiento y reparación de estufas" data-desc="Limpieza, ajuste de quemadores y reparación de estufas y hornos a gas de cualquier marca." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de estufa">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 10h18v2H3zm2-6h14l1 4H4l1-4zm-1 9h16l-1 7H5l-1-7z"/></svg></div>
-        <h3>Mantenimiento y reparación de estufas</h3>
-        <p>Limpieza, ajuste de quemadores y reparación de estufas a gas de cualquier marca.</p>
-      </button>
-      <button type="button" id="servicio-reformas" class="service-card" data-img="assets/hero/revision-fugas.jpg" data-titulo="Reformas de gas" data-desc="Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad." data-mensaje="Hola Siigas Medellín, quiero programar una reforma de red de gas">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg></div>
-        <h3>Reformas de gas</h3>
-        <p>Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad.</p>
-      </button>
-      <button type="button" class="service-card" data-img="assets/calentador-nuevo.jpg" data-titulo="Venta de calentadores" data-desc="Asesoría y venta de calentadores de las mejores marcas, con instalación incluida." data-mensaje="Hola Siigas Medellín, quiero información para comprar un calentador">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M7 4h10l1 4H6l1-4zm-2 6h14l-1 10H6L5 10z"/></svg></div>
-        <h3>Venta de calentadores</h3>
-        <p>Asesoría y venta de calentadores de las mejores marcas, con instalación incluida.</p>
-      </button>
-    </div>
-  </div>
-</section>
-
-<div class="modal-overlay" id="servicioModalOverlay">
-  <div class="modal-servicio">
-    <button type="button" class="modal-cerrar" id="servicioModalCerrar" aria-label="Cerrar">✕</button>
-    <img id="servicioModalImg" src="" alt="">
-    <div class="modal-servicio-body">
-      <h3 id="servicioModalTitulo"></h3>
-      <p id="servicioModalDesc"></p>
-      <a class="btn btn-primary" id="servicioModalWhatsapp" href="#" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
-        Escríbenos y programa tu servicio
-      </a>
+      <aside class="card-agenda">
+        <div class="linea-ignicion"></div>
+        <div class="inner">
+          <span class="overline">Respuesta rápida</span>
+          <h2>Solicita tu visita técnica</h2>
+          <p>Un técnico real te atiende por WhatsApp para agendar tu servicio o resolver tu duda al momento.</p>
+          <div class="acciones">
+            <a class="btn btn-whatsapp btn-lg" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20agendar%20una%20visita%20t%C3%A9cnica" target="_blank" rel="noopener">
+              <svg width="19" height="19" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+            <a class="btn btn-fantasma" href="tel:+573053220463">📞 Llamar 305 322 0463</a>
+          </div>
+          <dl>
+            <div>
+              <dt>Horario</dt>
+              <dd>L-V 7:00–5:00<br>Sáb 7:00–4:00</dd>
+            </div>
+            <div>
+              <dt>Cobertura</dt>
+              <dd>Área Metropolitana y Oriente</dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
     </div>
   </div>
 </div>
 
-<section class="why" id="nosotros">
-  <div class="container why-grid">
-    <div>
-      <span class="section-tag">Por qué elegirnos</span>
-      <h2 class="section-title">Confianza y experiencia en cada servicio</h2>
-      <div class="why-list">
-        <div class="why-item">
-          <div class="num">1</div>
-          <div><h4>Técnicos profesionales</h4><p>Personal capacitado en manejo seguro de gas y calentadores de todas las marcas.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="num">2</div>
-          <div><h4>Cobertura amplia</h4><p>Atendemos toda el área metropolitana de Medellín y el oriente antioqueño.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="num">3</div>
-          <div><h4>Garantía en repuestos</h4><p>Todo repuesto instalado cuenta con garantía, para tu tranquilidad.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="num">4</div>
-          <div><h4>Respuesta rápida por WhatsApp</h4><p>Agenda tu visita técnica en minutos, sin complicaciones.</p></div>
-        </div>
+<div class="stats-wrap">
+  <div class="stats">
+    <dl class="stats-grid">
+      <div>
+        <dt>Técnicos</dt>
+        <dd>certificados en gas</dd>
       </div>
-    </div>
-    <div class="why-photos">
-      <img src="assets/instalacion-bosch.jpg" alt="Calentador Bosch instalado por Siigas Medellín">
-      <img src="assets/instalacion-haceb.jpg" alt="Instalación Haceb 5.5 litros">
-      <img src="assets/calentador-nuevo.jpg" alt="Calentador nuevo listo para instalar">
-    </div>
+      <div>
+        <dt>Garantía</dt>
+        <dd>en repuestos instalados</dd>
+      </div>
+      <div>
+        <dt>Cobertura</dt>
+        <dd>área metropolitana y oriente</dd>
+      </div>
+      <div>
+        <dt>WhatsApp</dt>
+        <dd>respuesta rápida</dd>
+      </div>
+    </dl>
   </div>
-</section>
+</div>
 
 <section class="coverage" id="cobertura">
   <div class="container">
-    <span class="section-tag" style="color:#ffcf9c;">Zona de cobertura</span>
-    <h2 class="section-title">Atendemos toda el área metropolitana y el oriente</h2>
-    <p class="section-sub">Sin importar en qué zona estés, nuestros técnicos llegan hasta tu hogar o negocio.</p>
+    <span class="overline">Dónde trabajamos</span>
+    <h2 class="section-title">Cobertura en el Valle de Aburrá y Oriente</h2>
+    <p class="section-sub">Técnicos cercanos para responder rápido en tu zona.</p>
     <div class="coverage-tags">
       <span>Medellín</span>
       <span>Envigado</span>
@@ -493,20 +414,176 @@
       <span>Bello</span>
       <span>La Estrella</span>
       <span>Copacabana</span>
-      <span>Oriente antioqueño</span>
       <span>Rionegro</span>
       <span>Marinilla</span>
       <span>El Retiro</span>
+      <span>Oriente Antioqueño</span>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contacto">
+<section id="servicios">
   <div class="container">
-    <span class="section-tag">Contáctanos</span>
+    <div class="section-head">
+      <div>
+        <span class="overline">Qué hacemos</span>
+        <h2 class="section-title">¿En qué te podemos ayudar hoy?</h2>
+      </div>
+      <div class="scroll-nav">
+        <button type="button" id="scrollLeft" aria-label="Anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15 18l-6-6 6-6v12z"/></svg>
+        </button>
+        <button type="button" id="scrollRight" aria-label="Siguiente">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6l6 6-6 6V6z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="servicios-track" id="serviciosTrack">
+      <button type="button" id="servicio-mantenimiento" class="card-servicio" data-img="assets/hero/mantenimiento-calentadores.jpg" data-titulo="Mantenimiento y reparación de calentadores" data-desc="Revisión completa, cambio de repuestos y solución de fallas para que tengas agua caliente siempre. Todo repuesto instalado cuenta con garantía." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de calentador">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-7 8-7 12a7 7 0 0 0 14 0c0-4-4-8-7-12z"/></svg></div>
+          <h3>Mantenimiento y reparación de calentadores</h3>
+          <p>Revisión completa, cambio de repuestos y solución de fallas.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+
+      <button type="button" id="servicio-instalacion" class="card-servicio" data-img="assets/hero/instalacion-calentadores.jpg" data-titulo="Instalación de calentadores" data-desc="Instalación segura y certificada de calentadores nuevos, con pruebas de funcionamiento incluidas, sin importar la marca." data-mensaje="Hola Siigas Medellín, quiero programar la instalación de un calentador">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M4 20h16v-2H4v2zM6 4v12h12V4H6zm2 2h8v8H8V6z"/></svg></div>
+          <h3>Instalación de calentadores</h3>
+          <p>Instalación segura, con pruebas de funcionamiento incluidas.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+
+      <button type="button" id="servicio-fugas" class="card-servicio" data-img="assets/hero/correccion-fugas.jpg" data-titulo="Reparación de fugas de gas" data-desc="Detección y corrección de fugas con equipos adecuados, priorizando la seguridad de tu hogar o negocio." data-mensaje="Hola Siigas Medellín, quiero programar una revisión/reparación de fuga de gas">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5zm0 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg></div>
+          <h3>Reparación de fugas de gas</h3>
+          <p>Detección y corrección con equipos adecuados de medición.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+
+      <button type="button" class="card-servicio" data-img="assets/hero/mantenimiento-estufas.jpg" data-titulo="Mantenimiento y reparación de estufas" data-desc="Limpieza, ajuste de quemadores y reparación de estufas y hornos a gas de cualquier marca." data-mensaje="Hola Siigas Medellín, quiero programar un mantenimiento/reparación de estufa">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M3 10h18v2H3zm2-6h14l1 4H4l1-4zm-1 9h16l-1 7H5l-1-7z"/></svg></div>
+          <h3>Mantenimiento y reparación de estufas</h3>
+          <p>Limpieza y ajuste de quemadores en estufas y hornos.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+
+      <button type="button" id="servicio-reformas" class="card-servicio" data-img="assets/hero/revision-fugas.jpg" data-titulo="Reformas de gas" data-desc="Adecuación y reforma de instalaciones de gas domiciliario cumpliendo normas de seguridad." data-mensaje="Hola Siigas Medellín, quiero programar una reforma de red de gas">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2zm0 5 6.5 13h-13L12 7z"/></svg></div>
+          <h3>Reformas de gas</h3>
+          <p>Adecuación de instalaciones cumpliendo normas de seguridad.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+
+      <button type="button" class="card-servicio" data-img="assets/calentador-nuevo.jpg" data-titulo="Venta de calentadores" data-desc="Asesoría y venta de calentadores de las mejores marcas, con instalación incluida." data-mensaje="Hola Siigas Medellín, quiero información para comprar un calentador">
+        <div class="linea-ignicion"></div>
+        <div class="cs-body">
+          <div class="servicio-icono"><svg viewBox="0 0 24 24"><path d="M7 4h10l1 4H6l1-4zm-2 6h14l-1 10H6L5 10z"/></svg></div>
+          <h3>Venta de calentadores</h3>
+          <p>Asesoría y venta de las mejores marcas, con instalación.</p>
+          <span class="ver-mas">Ver más →</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="domicilio">
+  <div class="container">
+    <span class="overline">A tu ritmo</span>
+    <h2 class="section-title">Resolvemos en tu casa, no por teléfono.</h2>
+    <p class="section-sub">Técnicos certificados con las herramientas y repuestos necesarios para diagnosticar y solucionar en la misma visita.</p>
+    <div class="domicilio-grid">
+      <div class="foto-card">
+        <img src="assets/hero/mantenimiento-calentadores.jpg" alt="Mantenimiento de calentador a gas en Medellín">
+        <span>Calentadores a gas</span>
+      </div>
+      <div class="foto-card">
+        <img src="assets/hero/mantenimiento-estufas.jpg" alt="Mantenimiento de estufas a gas">
+        <span>Estufas y hornos</span>
+      </div>
+      <div class="foto-card">
+        <img src="assets/hero/revision-fugas.jpg" alt="Revisión de fugas de gas">
+        <span>Fugas de gas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marcas">
+  <div class="container">
+    <span class="overline">Sin importar la marca</span>
+    <h2 class="section-title">Trabajamos con todas las marcas</h2>
+    <p class="section-sub">Instalamos, reparamos y damos mantenimiento a calentadores de las principales marcas del mercado colombiano.</p>
+    <div class="marcas-chips">
+      <span>Haceb</span>
+      <span>Bosch</span>
+      <span>Rheem</span>
+      <span>Clasic</span>
+      <span>Titanium</span>
+      <span>OKA</span>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="container nosotros-grid">
+    <img src="assets/instalacion-haceb.jpg" alt="Técnico de Siigas Medellín instalando un calentador a gas">
+    <div class="texto">
+      <span class="overline">Nosotros</span>
+      <h2 class="section-title" style="margin-bottom:6px;">Un equipo con experiencia real en campo</h2>
+      <p>No somos intermediarios ni "toderos" de barrio: somos técnicos certificados en el manejo de gas, con protocolos de seguridad en cada instalación y garantía en los repuestos que usamos.</p>
+      <div class="checklist">
+        <div><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/></svg> Técnicos certificados en gas</div>
+        <div><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/></svg> Garantía en repuestos instalados</div>
+        <div><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/></svg> Cobertura en área metropolitana y oriente</div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-oscuro" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">Conócenos</a>
+        <a class="btn btn-fantasma" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="firma">
+  <div class="container">
+    <svg viewBox="0 0 64 88" fill="none">
+      <defs>
+        <linearGradient id="gradLlama" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f5be00"/>
+          <stop offset="100%" stop-color="#c1361a"/>
+        </linearGradient>
+      </defs>
+      <path d="M32 2 C 41 22, 53 33, 50 57 C 48 78, 40 94, 32 94 C 24 94, 16 78, 14 57 C 11 36, 23 22, 32 2 Z" fill="url(#gradLlama)" transform="scale(0.9)"/>
+      <path d="M32 40 C 38 52, 42 60, 40 71 C 39 82, 35 90, 32 90 C 29 90, 25 82, 24 71 C 23 60, 27 52, 32 40 Z" fill="#1e6bff" transform="scale(0.9)"/>
+    </svg>
+    <h3>Siigas Medellín</h3>
+    <p>Calidez y seguridad para tu hogar, todos los días, en Medellín y el oriente antioqueño.</p>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <span class="overline">Contáctanos</span>
     <h2 class="section-title">Agenda tu servicio hoy mismo</h2>
     <p class="section-sub">Escríbenos por WhatsApp o llámanos, con gusto te atendemos.</p>
-    <div class="contact-grid">
+    <div class="contact-grid" style="margin-top:30px;">
       <div class="info-card">
         <div class="info-row">
           <svg viewBox="0 0 24 24"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z" transform="scale(0.75) translate(2,0)"/></svg>
@@ -514,10 +591,7 @@
         </div>
         <div class="info-row">
           <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3 1-1-2.5-2.5V8h-1.5zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
-          <div>
-            <h4>Horario de atención</h4>
-            <p>Lunes a viernes: 7:00 a.m. – 5:00 p.m.<br>Sábados: 7:00 a.m. – 4:00 p.m.</p>
-          </div>
+          <div><h4>Horario de atención</h4><p>Lunes a viernes: 7:00 a.m. – 5:00 p.m.<br>Sábados: 7:00 a.m. – 4:00 p.m.</p></div>
         </div>
         <div class="info-row">
           <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 6 9 11 9 11s9-5 9-11c0-5-4-9-9-9zm0 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -525,15 +599,9 @@
         </div>
       </div>
       <div class="cta-card">
-        <div class="cta-avatar">
-          <img src="assets/asistente.png" alt="Asistente de Siigas Medellín lista para atenderte">
-          <span class="estado-label"><span class="punto"></span> En línea ahora</span>
-        </div>
         <h3>¿Tu calentador falló o necesitas mantenimiento?</h3>
-        <p>Escríbenos ahora por WhatsApp y agenda tu visita técnica sin costo de diagnóstico en tu zona.</p>
-        <a class="btn btn-primary" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20agendar%20una%20visita%20t%C3%A9cnica" target="_blank" rel="noopener">
-          Chatear por WhatsApp
-        </a>
+        <p>Escríbenos ahora por WhatsApp y agenda tu visita técnica en tu zona.</p>
+        <a class="btn btn-whatsapp btn-lg" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20agendar%20una%20visita%20t%C3%A9cnica" target="_blank" rel="noopener">Chatear por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -542,106 +610,84 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/logo-icono.png" alt="Siigas Medellín">
-        <span>Siigas Medellín</span>
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo-icono.png" alt="Siigas Medellín">
+          <span>SIIGAS MEDELLÍN</span>
+        </div>
+        <p style="max-width:280px;">Servicio técnico de calentadores y gas en Medellín, área metropolitana y oriente antioqueño.</p>
       </div>
-      <div class="foot-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#cobertura">Cobertura</a>
-        <a href="#contacto">Contacto</a>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <a href="#servicio-mantenimiento">Mantenimiento de calentadores</a>
+        <a href="#servicio-instalacion">Instalación de calentadores</a>
+        <a href="#servicio-fugas">Fugas de gas</a>
+        <a href="#servicio-reformas">Reformas de gas</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <p>305 322 0463</p>
+        <p>L-V 7:00am–5:00pm</p>
+        <p>Sáb 7:00am–4:00pm</p>
+      </div>
+      <div class="footer-col">
+        <h5>Cobertura</h5>
+        <p>Medellín y área metropolitana</p>
+        <p>Oriente antioqueño</p>
       </div>
     </div>
     <div class="foot-bottom">
-      © 2026 Siigas Medellín. Mantenimiento y reparación de calentadores a gas. Todos los derechos reservados.
-      <br>
-      <a href="legal/privacidad.html">Tratamiento de Datos</a> ·
-      <a href="legal/terminos.html">Términos y Condiciones</a> ·
+      <span>© 2026 Siigas Medellín. Todos los derechos reservados.</span>
+      <a href="legal/privacidad.html">Tratamiento de Datos</a>
+      <a href="legal/terminos.html">Términos y Condiciones</a>
       <a href="legal/cookies.html">Política de Cookies</a>
     </div>
   </div>
 </footer>
 
+<div class="modal-overlay" id="servicioModalOverlay">
+  <div class="modal-servicio">
+    <button type="button" class="modal-cerrar" id="servicioModalCerrar" aria-label="Cerrar">✕</button>
+    <img id="servicioModalImg" src="" alt="">
+    <div class="modal-servicio-body">
+      <h3 id="servicioModalTitulo"></h3>
+      <p id="servicioModalDesc"></p>
+      <a class="btn btn-whatsapp" id="servicioModalWhatsapp" href="#" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+        Escríbenos y programa tu servicio
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wa-float-wrap" id="waFloatWrap">
+  <div class="wa-bubble" id="waBubble">👋 ¿En qué te podemos ayudar?</div>
+  <a class="wa-float" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20informaci%C3%B3n%20sobre%20mantenimiento%20de%20calentador" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+  </a>
+</div>
+
 <script>
-(function() {
-  var overlay = document.getElementById('servicioModalOverlay');
-  var imgEl = document.getElementById('servicioModalImg');
-  var tituloEl = document.getElementById('servicioModalTitulo');
-  var descEl = document.getElementById('servicioModalDesc');
-  var waEl = document.getElementById('servicioModalWhatsapp');
-  var cerrarBtn = document.getElementById('servicioModalCerrar');
-  if (!overlay) return;
-
-  function abrirModal(card) {
-    imgEl.src = card.dataset.img;
-    imgEl.alt = card.dataset.titulo;
-    tituloEl.textContent = card.dataset.titulo;
-    descEl.textContent = card.dataset.desc;
-    waEl.href = 'https://wa.me/573053220463?text=' + encodeURIComponent(card.dataset.mensaje);
-    overlay.classList.add('abierto');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function cerrarModal() {
-    overlay.classList.remove('abierto');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.service-card').forEach(function(card) {
-    card.addEventListener('click', function() { abrirModal(card); });
-  });
-  cerrarBtn.addEventListener('click', cerrarModal);
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) cerrarModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') cerrarModal();
-  });
-
-  function irAServicioPorHash(hash) {
-    if (!hash) return;
-    var card = document.querySelector(hash);
-    if (!card || !card.classList.contains('service-card')) return;
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(function() { abrirModal(card); }, 350);
-  }
-
-  document.querySelectorAll('.quickbar-link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var hash = link.getAttribute('href');
-      history.pushState(null, '', hash);
-      irAServicioPorHash(hash);
-    });
-  });
-
-  if (window.location.hash) {
-    window.addEventListener('load', function() {
-      irAServicioPorHash(window.location.hash);
-    });
-  }
-})();
-
+/* ---------- Menú móvil ---------- */
 (function() {
   var toggle = document.getElementById('menuToggle');
   var menu = document.getElementById('mobileMenu');
-  if (toggle && menu) {
-    toggle.addEventListener('click', function() {
-      var abierto = menu.classList.toggle('abierto');
-      toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-      toggle.textContent = abierto ? '✕' : '☰';
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', function() {
+    var abierto = menu.classList.toggle('abierto');
+    toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    toggle.textContent = abierto ? '✕' : '☰';
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menu.classList.remove('abierto');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
     });
-    menu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        menu.classList.remove('abierto');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
-    });
-  }
+  });
 })();
 
+/* ---------- Carrusel del banner (orden fijo, luego aleatorio) ---------- */
 (function() {
   var imagenes = [
     { src: 'assets/hero/cambio-calentador.jpg', nombre: 'Cambio de calentador' },
@@ -662,29 +708,36 @@
     return a;
   }
 
-  var cont = document.getElementById('heroCarrusel');
-  var nombreEl = document.getElementById('heroCarruselNombre');
-  if (!cont) return;
+  var banner = document.getElementById('heroBanner');
+  var caption = document.getElementById('bannerCaption');
+  var dotsWrap = document.getElementById('bannerDots');
+  if (!banner) return;
 
-  var imgA = cont.querySelector('.hero-carrusel-img');
-  var imgB = document.createElement('img');
-  imgB.className = 'hero-carrusel-img';
-  cont.insertBefore(imgB, cont.querySelector('.hero-carrusel-caption'));
-
+  var imgs = banner.querySelectorAll('.banner-img');
+  var imgA = imgs[0], imgB = imgs[1];
   var orden = imagenes.slice();
   var indice = 0;
   var mostrandoA = true;
 
+  imagenes.forEach(function(_, i) {
+    var dot = document.createElement('span');
+    if (i === 0) dot.classList.add('activo');
+    dotsWrap.appendChild(dot);
+  });
+
   function siguienteOrden() {
     indice++;
-    if (indice >= orden.length) {
-      orden = mezclar(imagenes);
-      indice = 0;
-    }
-    return orden[indice];
+    if (indice >= orden.length) { orden = mezclar(imagenes); indice = 0; }
+    return { item: orden[indice], idxOriginal: imagenes.indexOf(orden[indice]) };
   }
 
-  function mostrar(item) {
+  function actualizarDots(idx) {
+    dotsWrap.querySelectorAll('span').forEach(function(d, i) {
+      d.classList.toggle('activo', i === idx);
+    });
+  }
+
+  function mostrar(item, idxOriginal) {
     var entrante = mostrandoA ? imgB : imgA;
     var saliente = mostrandoA ? imgA : imgB;
     entrante.src = item.src;
@@ -692,18 +745,87 @@
     entrante.onload = function() {
       entrante.classList.add('activa');
       saliente.classList.remove('activa');
-      nombreEl.textContent = item.nombre;
+      caption.textContent = item.nombre;
+      actualizarDots(idxOriginal);
     };
     mostrandoA = !mostrandoA;
   }
 
-  mostrar(orden[0]);
-
+  mostrar(orden[0], 0);
   setInterval(function() {
-    mostrar(siguienteOrden());
-  }, 3800);
+    var r = siguienteOrden();
+    mostrar(r.item, r.idxOriginal);
+  }, 4200);
 })();
 
+/* ---------- Scroll horizontal de servicios ---------- */
+(function() {
+  var track = document.getElementById('serviciosTrack');
+  var left = document.getElementById('scrollLeft');
+  var right = document.getElementById('scrollRight');
+  if (!track) return;
+  function paso() { return Math.round(track.clientWidth * 0.85); }
+  left.addEventListener('click', function() { track.scrollBy({ left: -paso(), behavior: 'smooth' }); });
+  right.addEventListener('click', function() { track.scrollBy({ left: paso(), behavior: 'smooth' }); });
+})();
+
+/* ---------- Modal de servicio ---------- */
+(function() {
+  var overlay = document.getElementById('servicioModalOverlay');
+  var imgEl = document.getElementById('servicioModalImg');
+  var tituloEl = document.getElementById('servicioModalTitulo');
+  var descEl = document.getElementById('servicioModalDesc');
+  var waEl = document.getElementById('servicioModalWhatsapp');
+  var cerrarBtn = document.getElementById('servicioModalCerrar');
+  if (!overlay) return;
+
+  function abrirModal(card) {
+    imgEl.src = card.dataset.img;
+    imgEl.alt = card.dataset.titulo;
+    tituloEl.textContent = card.dataset.titulo;
+    descEl.textContent = card.dataset.desc;
+    waEl.href = 'https://wa.me/573053220463?text=' + encodeURIComponent(card.dataset.mensaje);
+    overlay.classList.add('abierto');
+    document.body.style.overflow = 'hidden';
+  }
+  function cerrarModal() {
+    overlay.classList.remove('abierto');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.card-servicio').forEach(function(card) {
+    card.addEventListener('click', function() { abrirModal(card); });
+  });
+  cerrarBtn.addEventListener('click', cerrarModal);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) cerrarModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') cerrarModal(); });
+
+  function irAServicioPorHash(hash) {
+    if (!hash) return;
+    var card = document.querySelector(hash);
+    if (!card || !card.classList.contains('card-servicio')) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+    setTimeout(function() { abrirModal(card); }, 350);
+  }
+  if (window.location.hash) {
+    window.addEventListener('load', function() { irAServicioPorHash(window.location.hash); });
+  }
+})();
+
+/* ---------- Burbuja de WhatsApp periódica ---------- */
+(function() {
+  var bubble = document.getElementById('waBubble');
+  if (!bubble) return;
+  function ping() {
+    bubble.classList.add('visible');
+    setTimeout(function() { bubble.classList.remove('visible'); }, 7000);
+  }
+  setTimeout(ping, 8000);
+  setInterval(ping, 180000);
+  bubble.addEventListener('click', function() { bubble.classList.remove('visible'); });
+})();
+
+/* ---------- Seguimiento de clics en WhatsApp / llamada ---------- */
 (function() {
   if (typeof gtag !== 'function') return;
   document.addEventListener('click', function(e) {
