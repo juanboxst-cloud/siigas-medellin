@@ -213,6 +213,15 @@
   .checklist svg{width:20px;height:20px;fill:var(--whatsapp);flex-shrink:0;margin-top:1px;}
 
   /* Firma de marca */
+  /* Normativa */
+  .normativa{background:var(--grafito);color:#fff;position:relative;overflow:hidden;}
+  .normativa::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amarillo) 0%,var(--amarillo) 55%,var(--azul-llama) 100%);}
+  .normativa .overline{color:var(--amarillo);}
+  .normativa .overline::before{content:"";display:inline-block;width:20px;height:2px;background:var(--amarillo);}
+  .normativa .section-title{color:#fff;max-width:680px;}
+  .normativa p{color:#c3cad1;max-width:680px;margin-bottom:16px;font-size:1rem;line-height:1.6;}
+  .normativa .btn{margin-top:14px;}
+
   .firma{background:var(--grafito);color:#fff;text-align:center;}
   .firma svg{width:56px;height:80px;margin:0 auto 18px;}
   .firma h3{font-family:var(--font-display);font-weight:800;font-size:1.3rem;margin-bottom:10px;color:#fff;}
@@ -625,6 +634,20 @@
         <a class="btn btn-fantasma" href="#servicios">Ver servicios</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="normativa">
+  <div class="container">
+    <span class="overline">Revisión periódica · CREG 059 de 2012</span>
+    <h2 class="section-title">Tu red interna de gas tiene revisión obligatoria cada 5 años</h2>
+    <p>En Colombia, la revisión periódica de la instalación interna de gas es obligatoria cada 5 años (Resolución CREG 059 de 2012). Su objetivo es simple: confirmar que la red de tu vivienda sigue siendo segura.</p>
+    <p>Desde 2014 esa responsabilidad es del usuario: si en la revisión aparecen defectos, corregirlos queda a cargo del propietario para conservar el servicio de forma segura y conforme.</p>
+    <p>La buena noticia: es un trámite que se resuelve rápido y bien. En Siigas Medellín hacemos el diagnóstico, te explicamos qué encontró la revisión y dejamos tu instalación corregida y conforme.</p>
+    <a class="btn btn-whatsapp btn-lg" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20en%20la%20revisi%C3%B3n%20de%20gas%20me%20reportaron%20defectos%20y%20necesito%20corregirlos" target="_blank" rel="noopener">
+      <img src="assets/whatsapp3.webp" alt="" class="ico-wa" style="width:22px;height:22px;max-width:22px;min-width:22px;">
+      Corregir mi instalación
+    </a>
   </div>
 </section>
 
