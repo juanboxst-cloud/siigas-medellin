@@ -323,7 +323,13 @@
     .banner{aspect-ratio:4/3.2;}
     .stats-grid{grid-template-columns:repeat(2,1fr);}
     .stats-grid dt{font-size:1.2rem;}
-    .card-servicio{flex:0 0 84%;}
+    .scroll-nav{display:none;}
+    .servicios-track{
+      flex-direction:column;overflow-x:visible;scroll-snap-type:none;
+      border:3px solid var(--amarillo);border-radius:var(--radius-lg);
+      padding:14px;gap:14px;
+    }
+    .card-servicio{flex:1 1 auto;width:100%;}
     .domicilio-grid{grid-template-columns:1fr;}
     .section-title{font-size:1.5rem;}
     .footer-grid{grid-template-columns:1fr 1fr;gap:26px;}
