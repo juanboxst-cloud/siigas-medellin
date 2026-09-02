@@ -151,7 +151,21 @@
   .coverage{padding-top:70px;}
   .coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:24px;}
   .coverage-tags{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
-  .coverage-tags span{background:var(--niebla);border:1px solid var(--niebla-borde);padding:9px 18px;border-radius:30px;font-weight:600;font-size:.88rem;}
+  .coverage-tags button{
+    background:var(--niebla);border:1px solid var(--niebla-borde);padding:9px 18px;border-radius:30px;
+    font-weight:600;font-size:.88rem;font-family:inherit;color:var(--grafito);cursor:pointer;
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+  }
+  .coverage-tags button:hover{border-color:var(--grafito);}
+  .coverage-tags button.activo{background:var(--whatsapp);border-color:var(--whatsapp);color:#fff;transform:translateY(-1px);}
+  .coverage-msg{
+    margin-top:18px;padding:16px 18px;border-radius:var(--radius-md);
+    background:#eafbf1;border:1px solid #b9ecce;display:none;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .coverage-msg.visible{display:flex;}
+  .coverage-msg .txt{flex:1;min-width:180px;font-size:.92rem;font-weight:600;color:#0e6b3c;}
+  .coverage-msg .txt strong{color:var(--grafito);}
+  .coverage-msg .btn{padding:.6rem 1.1rem;font-size:.86rem;}
   .coverage-map{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--niebla-borde);aspect-ratio:4/3;}
   .coverage-map iframe{width:100%;height:100%;border:0;display:block;}
 
@@ -434,19 +448,20 @@
     <h2 class="section-title">Cobertura en el Valle de Aburrá y Oriente</h2>
     <p class="section-sub">Técnicos cercanos para responder rápido en tu zona. Atendemos a domicilio, sin necesidad de un local fijo.</p>
     <div class="coverage-grid">
-      <div class="coverage-tags">
-        <span>Medellín</span>
-        <span>Envigado</span>
-        <span>Sabaneta</span>
-        <span>Itagüí</span>
-        <span>Bello</span>
-        <span>La Estrella</span>
-        <span>Copacabana</span>
-        <span>Rionegro</span>
-        <span>Marinilla</span>
-        <span>El Retiro</span>
-        <span>Oriente Antioqueño</span>
+      <div class="coverage-tags" id="coverageTags">
+        <button type="button">Medellín</button>
+        <button type="button">Envigado</button>
+        <button type="button">Sabaneta</button>
+        <button type="button">Itagüí</button>
+        <button type="button">Bello</button>
+        <button type="button">La Estrella</button>
+        <button type="button">Copacabana</button>
+        <button type="button">Rionegro</button>
+        <button type="button">Marinilla</button>
+        <button type="button">El Retiro</button>
+        <button type="button">Oriente Antioqueño</button>
       </div>
+      <div class="coverage-msg" id="coverageMsg"></div>
       <div class="coverage-map">
         <iframe
           src="https://www.google.com/maps?q=Valle+de+Aburr%C3%A1,+Antioquia,+Colombia&z=10&output=embed"
@@ -764,6 +779,26 @@
 </div>
 
 <script>
+/* ---------- Cobertura interactiva ---------- */
+(function() {
+  var cont = document.getElementById('coverageTags');
+  var msg = document.getElementById('coverageMsg');
+  if (!cont || !msg) return;
+
+  cont.querySelectorAll('button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      cont.querySelectorAll('button').forEach(function(b) { b.classList.remove('activo'); });
+      btn.classList.add('activo');
+      var zona = btn.textContent.trim();
+      var mensajeWa = 'Hola Siigas Medellín, estoy en ' + zona + ' y quiero solicitar un servicio';
+      msg.innerHTML =
+        '<span class="txt">✅ Sí, tenemos cobertura en <strong>' + zona + '</strong>. Escríbenos y agenda tu visita técnica.</span>' +
+        '<a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=' + encodeURIComponent(mensajeWa) + '" target="_blank" rel="noopener">Escribir por WhatsApp</a>';
+      msg.classList.add('visible');
+    });
+  });
+})();
+
 /* ---------- Menú móvil ---------- */
 (function() {
   var toggle = document.getElementById('menuToggle');
