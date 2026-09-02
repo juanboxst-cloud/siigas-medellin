@@ -198,8 +198,9 @@
   .card-red .btn{width:100%;font-size:.88rem;padding:.75rem 1rem;}
 
   .marcas{background:var(--niebla);}
-  .marcas-chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
-  .marcas-chips span{background:#fff;border:1px solid var(--niebla-borde);padding:12px 22px;border-radius:10px;font-weight:800;font-family:var(--font-display);font-size:.98rem;color:var(--grafito);}
+  .marcas-chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
+  .marcas-chips span{background:#fff;border:1px solid var(--niebla-borde);padding:12px 24px;border-radius:10px;display:flex;align-items:center;justify-content:center;height:72px;min-width:110px;}
+  .marcas-chips img{height:40px;width:auto;max-width:130px;}
 
   /* Nosotros */
   .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
@@ -248,8 +249,8 @@
     opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .25s ease, transform .25s ease;
   }
   .wa-bubble.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
-  .wa-float{background:var(--whatsapp);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);animation:pulse 2.4s infinite;}
-  .wa-float svg{width:30px;height:30px;fill:#fff;}
+  .wa-float{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);animation:pulse 2.4s infinite;overflow:hidden;}
+  .wa-float img{width:100%;height:100%;object-fit:cover;}
   @keyframes pulse{
     0%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}
     70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}
@@ -324,7 +325,7 @@
     <div class="nav-right">
       <span class="nav-phone">305 322 0463</span>
       <a class="nav-cta" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20necesito%20un%20servicio" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+        <img src="assets/whatsapp.avif" alt="" width="15" height="15" style="border-radius:50%;flex-shrink:0;">
         <span>WhatsApp</span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -370,7 +371,7 @@
           <p>Un técnico real te atiende por WhatsApp para agendar tu servicio o resolver tu duda al momento.</p>
           <div class="acciones">
             <a class="btn btn-whatsapp btn-lg" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20agendar%20una%20visita%20t%C3%A9cnica" target="_blank" rel="noopener">
-              <svg width="19" height="19" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+              <img src="assets/whatsapp.avif" alt="" width="19" height="19" style="border-radius:50%;flex-shrink:0;">
               Escríbenos por WhatsApp
             </a>
             <a class="btn btn-fantasma" href="tel:+573053220463">📞 Llamar 305 322 0463</a>
@@ -549,7 +550,7 @@
         <h3>Reforma y adecuación de red interna de gas</h3>
         <p>Corregimos, ampliamos o rehacemos la tubería interna de tu vivienda para que quede segura y conforme a la norma. Ideal cuando la red está vieja, presenta defectos o no pasa la revisión.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20necesito%20reformar%2Fadecuar%20la%20red%20interna%20de%20gas%20de%20mi%20casa" target="_blank" rel="noopener">
-          <svg width="17" height="17" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+          <img src="assets/whatsapp.avif" alt="" width="17" height="17" style="border-radius:50%;flex-shrink:0;">
           Cotizar por WhatsApp
         </a>
       </div>
@@ -558,7 +559,7 @@
         <h3>Adecuación de punto para gasodoméstico nuevo</h3>
         <p>Dejamos el punto de gas listo para tu estufa, cocina, secadora o calentador nuevo: nuevo punto, adecuación del existente y conexión segura del equipo.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20voy%20a%20instalar%20un%20gasodom%C3%A9stico%20nuevo%20y%20necesito%20adecuar%20el%20punto%20de%20gas" target="_blank" rel="noopener">
-          <svg width="17" height="17" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+          <img src="assets/whatsapp.avif" alt="" width="17" height="17" style="border-radius:50%;flex-shrink:0;">
           Cotizar por WhatsApp
         </a>
       </div>
@@ -567,7 +568,7 @@
         <h3>Corrección de fugas de gas</h3>
         <p>Detectamos y corregimos fugas en la instalación interna. Si hueles a gas, ciérralo, ventila y escríbenos: lo revisa personal certificado, no un improvisado.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20creo%20que%20tengo%20una%20fuga%20de%20gas%20y%20necesito%20que%20la%20revisen" target="_blank" rel="noopener">
-          <svg width="17" height="17" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+          <img src="assets/whatsapp.avif" alt="" width="17" height="17" style="border-radius:50%;flex-shrink:0;">
           Cotizar por WhatsApp
         </a>
       </div>
@@ -576,7 +577,7 @@
         <h3>Traslado y reubicación de puntos y equipos</h3>
         <p>¿Remodelaste la cocina o mueves la estufa/secadora de sitio? Reubicamos el punto de gas y el equipo dejando todo conforme y funcionando.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20necesito%20trasladar%20un%20punto%20de%20gas%20%2F%20un%20equipo%20a%20otro%20lugar" target="_blank" rel="noopener">
-          <svg width="17" height="17" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+          <img src="assets/whatsapp.avif" alt="" width="17" height="17" style="border-radius:50%;flex-shrink:0;">
           Cotizar por WhatsApp
         </a>
       </div>
@@ -585,7 +586,7 @@
         <h3>Instalación de calentadores a gas</h3>
         <p>Instalamos tu calentador a gas dejando la red y el punto listos. Corregimos la red e instalamos el equipo nuevo con una sola empresa, sin importar la marca.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20instalar%20un%20calentador%20a%20gas%20y%20dejar%20la%20red%20lista" target="_blank" rel="noopener">
-          <svg width="17" height="17" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+          <img src="assets/whatsapp.avif" alt="" width="17" height="17" style="border-radius:50%;flex-shrink:0;">
           Cotizar por WhatsApp
         </a>
       </div>
@@ -599,12 +600,11 @@
     <h2 class="section-title">Trabajamos con todas las marcas</h2>
     <p class="section-sub">Instalamos, reparamos y damos mantenimiento a calentadores de las principales marcas del mercado colombiano.</p>
     <div class="marcas-chips">
-      <span>Haceb</span>
-      <span>Bosch</span>
-      <span>Rheem</span>
-      <span>Clasic</span>
-      <span>Titanium</span>
-      <span>OKA</span>
+      <span><img src="assets/marcas/haceb.png" alt="Haceb"></span>
+      <span><img src="assets/marcas/bosch.png" alt="Bosch"></span>
+      <span><img src="assets/marcas/rheem.png" alt="Rheem"></span>
+      <span><img src="assets/marcas/clasic.jpg" alt="Clasic"></span>
+      <span><img src="assets/marcas/oka.png" alt="OKA"></span>
     </div>
   </div>
 </section>
@@ -712,7 +712,7 @@
       <h3 id="servicioModalTitulo"></h3>
       <p id="servicioModalDesc"></p>
       <a class="btn btn-whatsapp" id="servicioModalWhatsapp" href="#" target="_blank" rel="noopener">
-        <svg width="19" height="19" viewBox="0 0 32 32"><path fill="#fff" d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+        <img src="assets/whatsapp.avif" alt="" width="19" height="19" style="border-radius:50%;flex-shrink:0;">
         Escríbenos y programa tu servicio
       </a>
     </div>
@@ -722,7 +722,7 @@
 <div class="wa-float-wrap" id="waFloatWrap">
   <div class="wa-bubble" id="waBubble">👋 ¿En qué te podemos ayudar?</div>
   <a class="wa-float" href="https://wa.me/573053220463?text=Hola%20Siigas%20Medell%C3%ADn%2C%20quiero%20informaci%C3%B3n%20sobre%20mantenimiento%20de%20calentador" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-    <svg viewBox="0 0 32 32"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.646.86 5.09 2.317 7.07L4.8 27.2l5.28-1.49A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm6.94 16.94c-.29.816-1.43 1.5-2.35 1.7-.62.13-1.42.24-4.13-.9-3.46-1.44-5.68-4.94-5.86-5.17-.17-.24-1.4-1.87-1.4-3.56 0-1.7.87-2.53 1.18-2.88.3-.34.65-.42.86-.42h.62c.2 0 .47-.08.73.56.29.7.98 2.42 1.06 2.6.09.18.14.38.03.62-.11.24-.17.38-.34.58-.17.2-.36.45-.51.6-.17.17-.35.35-.15.7.2.34.9 1.48 1.93 2.4 1.32 1.18 2.44 1.55 2.79 1.72.35.17.55.15.76-.08.2-.24.87-1.02 1.1-1.37.24-.35.47-.29.78-.17.32.11 2.02.95 2.36 1.13.35.17.58.26.66.4.09.15.09.85-.2 1.66z"/></svg>
+    <img src="assets/whatsapp.avif" alt="WhatsApp">
   </a>
 </div>
 
